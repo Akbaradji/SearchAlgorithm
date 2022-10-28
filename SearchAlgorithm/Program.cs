@@ -78,7 +78,7 @@ namespace SearchAlgorithm
 
             } while ((ch == 'y') || (ch == 'Y'));
         }
-        public void LinierSearch()
+        public void LinearSearch()
         {
             char ch;
             //Search for number of comparasion 
@@ -105,6 +105,45 @@ namespace SearchAlgorithm
                 Console.WriteLine("\nContinue search (y/n):");
                 ch =char.Parse(Console.ReadLine());
             } while ((ch == 'y') || (ch == 'Y'));
+        }
+        static void Main(string[] args)
+        {
+            program mylist = new program();
+            int pilihanmenu;
+            char ch;
+
+            Console.WriteLine("Menu Option");
+            Console.WriteLine("================");
+            Console.WriteLine("1. Linear Search");
+            Console.WriteLine("2. Binary Search");
+            Console.WriteLine("3. Exit");
+            Console.WriteLine("Enter your choice (1,2,3) : ");
+            pilihanmenu = Convert.ToInt32(Console.ReadLine());
+            switch (pilihanmenu)
+            {
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("----------------");
+                    Console.WriteLine("Linear search");
+                    Console.WriteLine("----------------");
+                    mylist.input();
+                    mylist.LinearSearch();
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("----------------");
+                    Console.WriteLine("Binary search");
+                    Console.WriteLine("----------------");
+                    mylist.input();
+                    mylist.BinarySearch();
+                    break;
+                case 3:
+                    Console.WriteLine("exit.");
+                    break;
+                default:
+                    Console.WriteLine("error");
+                    break;
+            }
         }
    }
 }
